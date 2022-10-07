@@ -1,0 +1,52 @@
+//junior202212
+//matricula : 202220810
+
+#include <stdio.h>
+#include <math.h> // importei a biblioteca math.h para funcoes matematicas
+int main()
+{
+    int num1,num2,i; // para receber os dois numeros
+    float resultado; //para armazenar os numeros e mostrar o resultado
+    char codigo;    // para selecionar o operador
+     
+     //para pegar os valores digitados do usuario
+    printf("Digite o primeiro numero: ( se for raiz quadrada só esse vai valer ) ");
+    scanf("%d",&num1);
+    printf("Digite o segundo numero: ");
+    scanf("%d",&num2);
+    //para pegar o codigo da operaçao e fazer um switch ( evitar o if e o if else ) 
+    printf("Escolha a operação que irá realizar (+,-,*,/,^,r): ");
+    scanf(" %c",&codigo);
+      // atribuindo 0 ao resultado antes de qualquer operação
+    resultado=0;
+    switch(codigo)    
+    {
+        case '+':
+            resultado=num1+num2;
+            break;
+             
+        case '-':
+            resultado=num1-num2;
+            break;
+         
+        case '*':
+            resultado=num1*num2;
+            break;
+             
+        case '/':
+            resultado=(float)num1/(float)num2;
+            break;
+        
+        case '^':
+            resultado=pow(num1,num2);
+            break;
+        
+        case 'r':
+            resultado= sqrt(num1);
+            break;    
+             
+    }
+ 
+    printf("Resultado: %d %c %d = %f\n",num1,codigo,num2,resultado);
+    return 0;
+}
